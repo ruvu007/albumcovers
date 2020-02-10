@@ -27,6 +27,10 @@ section {
     overflow: hidden;
 }
 
+span {
+    float: right;
+}
+
 article {
     margin-top: 0px;
     background-color: rgba(255,255,255,0.8);
@@ -34,7 +38,8 @@ article {
     padding: 1em 1em 1em 1em;
     font-size: .8em;
     height: 402px;
-    transition: margin-top .5s cubic-bezier(.35,.07,.68,1.42);
+    overflow: auto;
+    animation: naarBeneden .8s ease-out forwards;
 }
 
 article ul, article ol {
@@ -42,5 +47,47 @@ article ul, article ol {
 }
 
 section:hover article {
-    margin-top: -405px;
+    animation: naarBoven .5s linear forwards;
+}
+
+@keyframes naarBoven {
+    0% {margin-top: 0;}
+    100% {margin-top: -404px;}
+}
+
+@-webkit-keyframes naarBoven {
+    0% {margin-top: 0;}
+    100% {margin-top: -404px;}
+}
+
+@-moz-keyframes naarBoven {
+    0% {margin-top: 0;}
+    100% {margin-top: -404px;}
+}
+
+@-o-keyframes naarBoven {
+    0% {margin-top: 0;}
+    100% {margin-top: -404px;}
+}
+
+/* Beneden */
+
+@keyframes naarBeneden {
+    0% {margin-top: -403px;}
+    100% {margin-bottom: 0;}
+}
+
+@-webkit-keyframes naarBeneden {
+    0% {margin-bottom: -403px;}
+    100% {margin-bottom: 0;}
+}
+
+@-moz-keyframes naarBeneden {
+    0% {margin-bottom: -403px;}
+    100% {margin-bottom: 0;}
+}
+
+@-o-keyframes naarBeneden {
+    0% {margin-bottom: -403px;}
+    100% {margin-bottom: 0;}
 }
