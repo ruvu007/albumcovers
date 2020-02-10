@@ -1,0 +1,46 @@
+body {
+    font-family: monospace;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    justify-items: center;
+    grid-gap: 1em;
+    background-color: lightgray;
+}
+
+/* reset padding box-sizing en marge */
+
+body * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h1 {
+    grid-column: 1/-1;
+}
+
+section {
+    width: 400px;
+    height: 400px;
+    overflow: hidden;
+}
+
+article {
+    margin-top: 0px;
+    background-color: rgba(255,255,255,0.8);
+    position: relative;
+    padding: 1em 1em 1em 1em;
+    font-size: .8em;
+    height: 402px;
+    transition: margin-top .5s cubic-bezier(.35,.07,.68,1.42);
+}
+
+article ul, article ol {
+    padding-left: 1em;
+}
+
+section:hover article {
+    margin-top: -405px;
+}
